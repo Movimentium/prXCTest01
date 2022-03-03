@@ -18,16 +18,28 @@ class prXCTest01Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testUserInitWithDic() {
+        var dicUser: [String : AnyObject] = [:]
+        dicUser["name"] = "Miguel" as AnyObject
+        //dicUser["name"] = 32 as AnyObject
+        dicUser["age"] = 32 as AnyObject
+        
+        assert(dicUser["name"] is String, "value for name is not String")
+        assert(dicUser["age"] is Int, "value for age is not Int")
+        let _ = User(withDic: dicUser)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
+    
+//    func testExample() throws {
+//        // This is an example of a functional test case.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//    }
+//
+//    func testPerformanceExample() throws {
+//        // This is an example of a performance test case.
+//        self.measure {
+//            // Put the code you want to measure the time of here.
+//        }
+//    }
 
 }
